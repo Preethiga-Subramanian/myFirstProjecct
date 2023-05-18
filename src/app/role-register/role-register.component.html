@@ -1,0 +1,19 @@
+<p>role-register works!</p>
+<div id="roleRegisterPage">
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="border border-white bg-dark rounded-5 p-5 m-5 pb-3 mb-2 row col-md-4" id="formid1">
+      <h1 class="text-white d-flex align-items-center justify-content-center pb-3">Role Register</h1>
+      <form [formGroup] = "roleRegisterform" (ngSubmit) = "roleRegisterFunction(roleRegisterform.value)">
+        <input type = "text" class = "form-control" name = "role" placeholder = "Enter New Role Name*"
+            formControlName = "role" required>
+        <br/>
+        <div class="d-flex align-items-center justify-content-center">
+          <input type = "submit" [disabled] = '!roleRegisterform.valid' class = "forsubmit btn btn-success" value = "Save">&nbsp;&nbsp;
+          <button type="button" class="btn btn-success text-white" value="Back" (click)="backFunction()">Back</button>
+        </div>
+      </form>
+    </div>
+    </div>
+</div>
+<br><br>
+

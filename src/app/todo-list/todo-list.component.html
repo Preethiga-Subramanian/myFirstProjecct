@@ -1,0 +1,19 @@
+<div class="container bg-dark text-white table-responsive">
+    <table class="table text-white">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Item Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of (todoObs | async)">
+          <td>{{ todo.id }}</td>
+          <td>{{ todo.item }}</td>
+          <td><span (click)="deleteTodoItem(todo.id)"><i class="bi bi-trash" title="Delete"></i></span></td>
+      </tbody>
+    </table>
+</div>
+
+

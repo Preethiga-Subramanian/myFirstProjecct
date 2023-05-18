@@ -1,0 +1,13 @@
+<h2 class="text-white">Child  Component</h2>
+<br>
+<!-- Data as a input -->
+<p class="text-white">Message from Parent via @input <b>{{message}}</b></p>
+<br>
+<!-- Injected Content -->
+<p class="text-white"> Message from Parent via content injection
+<ng-content></ng-content></p>
+<br><br>
+<p class="text-white">Customer Name {{ customer.name }} </p>
+<p class="text-white">Customer Code {{ customer.code }} </p>
+<p class="text-white">Do Check count {{ DocheckCount }} </p>
+<ul><li *ngFor="let log of changelog;" class="text-white"> {{ log }}</li></ul> `

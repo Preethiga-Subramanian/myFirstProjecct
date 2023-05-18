@@ -1,0 +1,7 @@
+<hr><hr>
+<div class="text-white d-flex align-items-center justify-content-center">
+  <form [formGroup]="todoForm" (submit)="onSubmit()">
+    <input type="text" id="item" name="item" formControlName="item" placeholder="Enter Item Name"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="submit" class="btn btn-primary">Add Item</button><br /><br>
+  </form>
+</div>

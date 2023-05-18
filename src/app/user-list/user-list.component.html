@@ -1,0 +1,71 @@
+
+<br><br>
+<div id="userDetail">
+  <div class="container bg-dark text-white table-responsive">
+    <h2>User(s) Details</h2>
+    <table class="table text-white">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Age</th>
+          <th>Role</th>
+          <th>RoleId</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of usersData">
+          <td>{{user.firstname}}</td>
+          <td>{{user.lastname}}</td>
+          <td>{{user.emailid}}</td>
+          <td>{{user.gender}}</td>
+          <td>{{user.age}}</td>
+          <td>{{user.role}}</td>
+          <td>{{user.roleid}}</td>
+          <td>
+            <a *ngIf="isAdminVar" routerLink="" (click)="userDeleteFunction(user.id)"><i class="bi bi-trash" title="Delete"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a routerLink="/edit-user/{{user.id}}/{{user.role}}"><i class="bi bi-pencil-square"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div><br><br>
+  <div class="d-flex align-items-center justify-content-center">
+    <a *ngIf="isAdminVar" routerLink="/role-register/0" class="text-decoration-none"><button type="button" class="btn btn-success text-white" value="Register New Role"><h5 class="text-white">Register New Role</h5></button></a>&nbsp;&nbsp;&nbsp;
+    <a *ngIf="isAdminVar" routerLink="/role-list" class="text-decoration-none"><button type="button" class="btn btn-success text-white" value="Role List"><h5 class="text-white">Role List</h5></button></a>&nbsp;&nbsp;&nbsp;
+  </div><br>
+  <div class="d-flex align-items-center justify-content-center">
+    <button type="button" class="btn btn-danger text-white" value="Back" (click)="logoutFunction()"><h5 class="text-white">Logout</h5></button>&nbsp;&nbsp;&nbsp;
+  </div>
+</div>
+<br><br>
+<!--
+<div class="container bg-dark text-white">
+  <div class="row font-weight-bold text-uppercase">
+    <div class="col">Firstname</div>
+    <div class="col">Lastname</div>
+    <div class="col">Email</div>
+    <div class="col">Gender</div>
+    <div class="col">Age</div>
+    <div class="col">Role</div>
+    <div class="col">RoleId</div>
+    <div class="col">Action</div>
+
+  </div>
+  <div class="row" *ngFor="let user of usersData">
+    <div class="col">{{user.firstname}}</div>
+    <div class="col">{{user.lastname}}</div>
+    <div class="col">{{user.emailid}}</div>
+    <div class="col">{{user.gender}}</div>
+    <div class="col">{{user.age}}</div>
+    <div class="col">{{user.role}}</div>
+    <div class="col">{{user.roleid}}</div>
+    <div class="col">
+      <a *ngIf="isAdminVar" routerLink="" (click)="userDeleteFunction(user.id)"><i class="bi bi-trash" title="Delete"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a routerLink="/edit-user/{{user.id}}/{{user.role}}"><i class="bi bi-pencil-square"></i></a>
+    </div>
+  </div>
+</div> -->

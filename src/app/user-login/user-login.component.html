@@ -1,0 +1,25 @@
+<div id="userLoginPage">
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="border border-white bg-dark rounded-5 p-5 m-5 pb-3 mb-2 row col-md-4" id="formid1">
+      <h1 class="text-white d-flex align-items-center justify-content-center pb-3">Login</h1>
+      <form [formGroup] = "userLoginform" (ngSubmit) = "userLoginFunction(userLoginform.value)">
+        <input type = "email" class = "form-control" name = "mailid" placeholder = "Enter Your Email Id*" formControlName = "mailid" required>
+        <small class="text-danger" *ngIf="userLoginform.get('mailid').touched && userLoginform.get('mailid').errors?.required">
+          *This field is required.
+        </small>
+        <small class="text-danger" *ngIf="userLoginform.get('mailid').touched && userLoginform.get('mailid').errors?.email">
+          *Enter a valid email address.
+        </small>
+        <br/>
+
+        <input type = "password" class = "form-control" name = "pwd1" placeholder = "Enter your Password*" formControlName = "pwd1">
+        <br/>
+        <div class="d-flex align-items-center justify-content-center">
+          <input type = "submit" [disabled] = '!userLoginform.valid' class = "forsubmit btn btn-success" value = "Login">&nbsp;&nbsp;
+          <button type="button" class="btn btn-success text-white" value="Back" (click)="backFunction()">Back</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<br><br>
